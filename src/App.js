@@ -1,23 +1,18 @@
-// import "./App.css";
-// function App(){
-//   return (
-//     <div id="container">
-      
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
 import "./App.css";
-import Grand from "./components/Grand";
+import Card from "./components/Card"
+import {arrayOfQuotes} from "./data" // importing the variable in {}
 
-function App() {
-  return (
+
+function App(){
+  return(
     <div id="container">
-    <Grand/>
-    
+      <div id="header">Famous Quotes</div>
+      <div id="Cardcontainer">
+      {arrayOfQuotes.map((item) => {
+        return <Card quote = {item.quote} author= {item.author}/>;
+      })}
+      </div>
+
     </div>
   );
 }
